@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Nokia Snake - Classic 1997</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<main class="phone">
+  <div class="brand" aria-hidden="true">NOKIA</div>
+  <div class="lcd">
+    <section id="screen-menu" class="screen" aria-label="Main menu">
+      <h1 class="title">NOKIA<br>SNAKE</h1>
+      <p class="sub">CLASSIC 1997</p>
+      <div class="crawler" aria-hidden="true"></div>
+      <nav class="menu" aria-label="Main menu">
+        <button id="btn-start" aria-label="Start game">START GAME</button>
+        <button id="btn-scores" aria-label="Show high scores">HIGH SCORES</button>
+        <button id="btn-how" aria-label="How to play">HOW TO PLAY</button>
+        <button id="btn-settings" aria-label="Settings">SETTINGS</button>
+      </nav>
+    </section>
+
+    <section id="screen-game" class="screen game" aria-label="Game" hidden>
+      <div class="hud">
+        <span>SCORE:<b id="hud-score">00000</b></span>
+        <span>LV:<b id="hud-level">01</b></span>
+        <span>HIGH:<b id="hud-high">00000</b></span>
+      </div>
+      <div class="board">
+        <canvas id="canvas" role="img" aria-label="Snake game board"></canvas>
+        <div id="ov-pause" class="overlay" role="dialog" aria-label="Paused" hidden>
+          <h2>PAUSED</h2><p>Press P to Resume</p>
+        </div>
+        <div id="ov-over" class="overlay" role="dialog" aria-label="Game over" hidden>
+          <h2>GAME OVER</h2>
+          <p id="over-new" class="blink" hidden>NEW HIGH SCORE!</p>
+          <p>SCORE: <b id="over-score">00000</b></p>
+          <p>HIGH: <b id="over-high">00000</b></p>
+          <button id="btn-again" aria-label="Play again">PLAY AGAIN</button>
+          <button id="btn-menu" aria-label="Main menu">MAIN MENU</button>
+        </div>
+      </div>
+      <div class="dpad" aria-label="Touch controls">
+        <button data-dir="up" aria-label="Up">&#9650;</button>
+        <button data-dir="left" aria-label="Left">&#9664;</button>
+        <button data-dir="right" aria-label="Right">&#9654;</button>
+        <button data-dir="down" aria-label="Down">&#9660;</button>
+      </div>
+    </section>
+
+    <section id="screen-how" class="screen text" aria-label="How to play" hidden>
+      <h2>HOW TO PLAY</h2>
+      <p>Control the snake:</p>
+      <p>&#8593; Up &nbsp; &#8595; Down<br>&#8592; Left &nbsp; &#8594; Right</p>
+      <p>Eat the apple to grow.</p>
+      <p>Avoid:<br>&bull; Walls<br>&bull; Your own body</p>
+      <p>P = Pause &nbsp; R = Restart<br>ESC = Menu</p>
+      <button class="back" aria-label="Back to menu">BACK (ESC)</button>
+    </section>
+
+    <section id="screen-scores" class="screen text" aria-label="High scores" hidden>
+      <h2>HIGH SCORES</h2>
+      <ol id="score-list" aria-label="Top 10 scores"></ol>
+      <button class="back" aria-label="Back to menu">BACK (ESC)</button>
+    </section>
+
+    <section id="screen-settings" class="screen" aria-label="Settings" hidden>
+      <h2>SETTINGS</h2>
+      <nav class="menu" aria-label="Settings">
+        <button id="set-sound"></button>
+        <button id="set-speed"></button>
+        <button id="set-grid"></button>
+        <button id="set-motion"></button>
+        <button class="back" aria-label="Back to menu">BACK (ESC)</button>
+      </nav>
+    </section>
+  </div>
+</main>
+<script type="module" src="js/app.js"></script>
+</body>
+</html>
